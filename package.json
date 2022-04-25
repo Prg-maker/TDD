@@ -3,7 +3,21 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {},
+  "line-staged": {
+    "*.js": [
+      "standard --fix",
+      "git add"
+    ]
+  },
+  "husky":{
+    "hooks":{
+      "pre-commit":"lint-staged"
+    }
+  },
   "devDependencies": {
+    "husky": "^7.0.4",
+    "lint-staged": "^12.4.0",
     "standard": "^17.0.0"
   }
 }
