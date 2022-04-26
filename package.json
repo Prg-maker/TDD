@@ -23,5 +23,10 @@
     "jest": "^28.0.0",
     "lint-staged": "^12.4.0",
     "standard": "^17.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.12.0",
+    "express": "^4.17.3",
+    "prisma": "^3.12.0"
   }
 }
