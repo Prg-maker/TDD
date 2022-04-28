@@ -14,10 +14,18 @@ class HttpResponse{
     }
   }
 
+
+
   static uneauthorizedError(){
     return {
       statusCode:401,
       body:  new UneauthorizedError()
+    }
+  }
+
+    static ok(){
+    return {
+      statusCode:200
     }
   }
 }
