@@ -78,4 +78,17 @@ describe('Login Router' , ()=>{
     expect(authUseCaseSpy.password).toBe(httpRequest.body.password) 
   })
 
+
+  it('Should return when invalid credentials are provided ' , ()=> {
+    const {sut} = makeSut()
+    const httpRequest = {
+      body: {
+        email: 'invalid_email_fake@gmail.com',
+        password :"password_invalid_fake"
+      }
+    } 
+
+    const httpResponese  = sut.route(httpRequest)
+    expect(httpResponese.statusCode).toBe(401) 
+  })
 })
