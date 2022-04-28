@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1651176207300" clover="3.2.0">
-  <project timestamp="1651176207300" name="All files">
-    <metrics statements="77" coveredstatements="77" conditionals="19" coveredconditionals="19" methods="8" coveredmethods="8" elements="104" coveredelements="104" complexity="0" loc="77" ncloc="77" packages="2" files="4" classes="4"/>
+<coverage generated="1651176453475" clover="3.2.0">
+  <project timestamp="1651176453475" name="All files">
+    <metrics statements="78" coveredstatements="78" conditionals="19" coveredconditionals="19" methods="8" coveredmethods="8" elements="105" coveredelements="105" complexity="0" loc="78" ncloc="78" packages="2" files="4" classes="4"/>
     <package name="helpers">
-      <metrics statements="43" coveredstatements="43" conditionals="6" coveredconditionals="6" methods="6" coveredmethods="6"/>
+      <metrics statements="44" coveredstatements="44" conditionals="6" coveredconditionals="6" methods="6" coveredmethods="6"/>
       <file name="httpResponse.js" path="/home/danielDev/mango/clean-node/src/presentation/helpers/httpResponse.js">
-        <metrics statements="31" coveredstatements="31" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
+        <metrics statements="32" coveredstatements="32" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -36,7 +36,8 @@
         <line num="28" count="2" type="stmt"/>
         <line num="29" count="2" type="stmt"/>
         <line num="30" count="2" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
       </file>
       <file name="missing-params-error.js" path="/home/danielDev/mango/clean-node/src/presentation/helpers/missing-params-error.js">
         <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>

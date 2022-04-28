@@ -101,7 +101,7 @@ describe('Login Router' , ()=>{
 
 
   it('Should return 200 when valid credentials are provided ' , ()=> {
-    const {sut } = makeSut()
+    const {sut , authUseCaseSpy } = makeSut()
 
 
     const httpRequest = {
@@ -113,6 +113,7 @@ describe('Login Router' , ()=>{
 
     const httpResponese  = sut.route(httpRequest)
     expect(httpResponese.statusCode).toBe(200) 
+    expect(httpResponese.body.accessToken).toEqual(authUseCaseSpy.accessToken) 
 
   })
 
