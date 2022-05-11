@@ -3,12 +3,14 @@ const ServerError = require('./server-error')
 
 module.exports = 
 class HttpResponse{
+
   static badRequest(error){
     return {
       statusCode:400,
-      body : error
+      body: error
     }
   }
+  
   static serverError(){
     return {
       statusCode:500,
