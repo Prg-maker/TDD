@@ -33,6 +33,8 @@ const makeEmailValidator= ()=>{
   return emailValidatorSpy
 }
 
+
+
 const makeAuthUseCase = ()=> {
   class AuthUseCaseSpy{
     auth(email , password){
@@ -48,8 +50,7 @@ const makeAuthUseCase = ()=> {
   return new AuthUseCaseSpy()
 }
 
-
-const makeAuthUseCaseWithError = ()=> {
+const makeEmailValidatorWithError = ()=> {
   class AuthUseCaseSpy{
     auth(){
       throw new Error()
@@ -57,6 +58,17 @@ const makeAuthUseCaseWithError = ()=> {
   }
   return new AuthUseCaseSpy()
 }  
+
+
+const makeAuthUseCaseWithError = ()=> {
+  class EmailValidatorSpy{
+    isValid(){
+      throw new Error()
+    }
+  }
+  return new EmailValidatorSpy()
+}  
+
 
 
 describe('Login Router' , ()=>{
@@ -262,6 +274,26 @@ describe('Login Router' , ()=>{
     const httpResponse  = await  sut.route(httpRequest)
     expect(httpResponse.statusCode).toBe(500)   
     expect(httpResponse.body).toEqual(new ServerError())
+
+  })
+
+
+
+
+  it('Should return 500 if EmailValidator throws  ' ,async ()=> {
+  
+    const authUseCaseSpy = makeAuthUseCase()
+    const emailValidatorSpy = makeEmailValidatorWithError()
+    const sut = new LoginRouter(authUseCaseSpy , emailValidatorSpy)
+    const httpRequest = {
+      body: {
+        email: 'emailfake@gmail.com',
+        password :"password_fake"
+      }
+    } 
+
+    const httpResponse  = await sut.route(httpRequest)
+    expect(httpResponse.statusCode).toBe(500)   
 
   })
 
